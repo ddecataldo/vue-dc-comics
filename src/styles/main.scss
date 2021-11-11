@@ -1,0 +1,65 @@
+/****************************************************************************
+General
+****************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+$padding-top: 48px;
+$padding-bottom: 48px;
+
+$white: #fff;
+
+/****************************************************************************
+Header
+****************************************************************************/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+
+    .logo{
+        img{
+            width: 80px;
+        }
+    }
+
+    .menu{
+
+        ul{
+            list-style-type: none;
+            display: flex;
+        }
+        li{
+            a{
+                padding: 15px;
+                color: #1c1c1c;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+        }
+
+    }
+}
+
+/****************************************************************************
+Main
+****************************************************************************/
+
+main{
+    background-color: #1c1c1c;
+    padding-top: $padding-top;
+    padding-bottom: $padding-bottom;
+    color: $white;
+}
