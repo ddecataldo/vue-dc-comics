@@ -3,25 +3,9 @@
         <div class="bg-primary">
             <div class="container">
                 <div class="row">
-                    <div class="column1">
-                        <img src="../assets/buy-comics-digital-comics.png">
-                        <span>digital comics</span>
-                    </div>
-                    <div class="column2">
-                        <img src="../assets/buy-comics-merchandise.png">
-                        <span>dc merchandise</span>
-                    </div>
-                    <div class="column3">
-                        <img src="../assets/buy-comics-subscriptions.png">
-                        <span>subscription</span>
-                    </div>
-                    <div class="column4">
-                        <img src="../assets/buy-comics-shop-locator.png">
-                        <span>comic shop locator</span>
-                    </div>
-                    <div class="column5">
-                        <img src="../assets/buy-dc-power-visa.svg">
-                        <span>dc power visa</span>
+                    <div v-for="(imageService, i) in listImageService" :key="i" class="column5">
+                        <img :src="require('../assets/'+ imageService.path )">
+                        <span>{{ imageService.text }}</span>
                     </div>
                 </div>
             </div>
@@ -80,11 +64,7 @@
                     </div>
                     <div class="column2">
                         <span>Follow Us</span>
-                        <img src="../assets/footer-facebook.png" alt="Seguici su Facebook">
-                        <img src="../assets/footer-twitter.png" alt="Seguici su Twitter">
-                        <img src="../assets/footer-youtube.png" alt="Seguici su YouTube">
-                        <img src="../assets/footer-pinterest.png" alt="Seguici su Pintarest">
-                        <img src="../assets/footer-periscope.png" alt="Seguici su Periscope">
+                        <img v-for="(imageSocial, i) in listImageSocial" :key="i" :src="require('../assets/'+ imageSocial.path )" :alt="imageSocial.alt">
                     </div>
                 </div>
             </div>
@@ -200,6 +180,51 @@ export default {
                     href: "#",
                 },
             ],
+            listImageSocial: [
+                {
+                 path: "footer-facebook.png",
+                 alt: "Seguici su Facebook"
+                },
+                {
+                 path: "footer-twitter.png",
+                 alt: "Seguici su Twitter"
+                },
+                {
+                 path: "footer-youtube.png",
+                 alt: "Seguici su YouTube"
+                },
+                {
+                 path: "footer-pinterest.png",
+                 alt: "Seguici su Pintarest"
+                },
+                {
+                 path: "footer-periscope.png",
+                 alt: "Seguici su Periscope"
+                }
+                
+            ],
+            listImageService: [
+                {
+                    path: "buy-comics-digital-comics.png",
+                    text: "digital comics",
+                },
+                {
+                    path: "buy-comics-merchandise.png",
+                    text: "dc merchandise",
+                },
+                {
+                    path: "buy-comics-subscriptions.png",
+                    text: "subscription",
+                },
+                {
+                    path: "buy-comics-shop-locator.png",
+                    text: "comic shop locator",
+                },
+                {
+                    path: "buy-dc-power-visa.svg",
+                    text: "dc power visa",
+                },
+            ]
 
         }
     }
